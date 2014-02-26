@@ -1,6 +1,5 @@
 require 'rake'
 require 'rspec/core/rake_task'
-require 'rubygems'
 require 'puppetlabs_spec_helper/rake_tasks'
 
 desc "Run all RSpec code examples"
