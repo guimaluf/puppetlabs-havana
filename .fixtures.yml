@@ -1,0 +1,13 @@
+fixtures:
+  repositories:
+    "apt": "git://github.com/puppetlabs/puppetlabs-apt.git"
+    "ntp": "git://github.com/puppetlabs/puppetlabs-ntp.git"
+    "keystone": "git://github.com/puppetlabs/puppetlabs-keystone.git"
+    "mysql": "git://github.com/puppetlabs/puppetlabs-mysql.git"
+    "nova": "git://github.com/puppetlabs/puppetlabs-nova.git"
+    "stdlib": "git://github.com/puppetlabs/puppetlabs-stdlib.git"
+    "sysctl": "git://github.com/duritong/puppet-sysctl.git"
+    "inifil":  "git://github.com/cprice-puppet/puppetlabs-inifile"
+    "openstack": "git@github.com:stackforge/puppet-openstack.git"
+  symlinks:
+    "havana": "#{source_dir}"
