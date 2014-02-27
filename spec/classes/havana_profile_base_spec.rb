@@ -16,8 +16,7 @@ describe 'havana::profile::base' do
   end
 
   it { should compile }
-#
-#  it { should contain_class('ntp') }
-#  it { should contain_class('openstack::repo') }
-#  it { should contain_resource('apt::source').with }
+  it { should contain_class('ntp') }
+  it { should contain_class('openstack::repo') }
+  it { should contain_class('havana::resources::connectors') }
 end
