@@ -20,11 +20,19 @@ havana::controller::address::management: '172.16.33.4'
 havana::storage::address::api: '192.168.11.5'
 havana::storage::address::management: '172.16.33.5'
 
+######## High Availability
+havana::controller::ha::address::list:
+ - '10.0.0.1'
+ - '10.0.0.2'
+
 ######## Database
 
 havana::mysql::root_password: 'spam-gak'
 havana::mysql::service_password: 'fuva-wax'
-havana::mysql::allowed_hosts: ['localhost', '127.0.0.1', '172.16.33.%']
+havana::mysql::allowed_hosts:
+ - 'localhost'
+ - '127.0.0.1'
+ - '172.16.33.%'
 
 ######## RabbitMQ
 
