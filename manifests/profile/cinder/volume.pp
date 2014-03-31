@@ -1,11 +1,12 @@
 # The profile to install the volume service
 class havana::profile::cinder::volume {
+  $data_address = ip_for_network(hiera('havana::network::data'))
 
   havana::resources::firewall { 'ISCSI API': port => '3260', }
 
   include ::havana::common::cinder
 
-  class { '::cinder::setup_test_volume': 
+  class { '::cinder::setup_test_volume':
     volume_name => 'cinder-volumes',
     size        => hiera('havana::cinder::volume_size')
   } ->
@@ -16,7 +17,7 @@ class havana::profile::cinder::volume {
   }
 
   class { '::cinder::volume::iscsi':
-    iscsi_ip_address  => hiera('havana::storage::address::management'),
+    iscsi_ip_address  => $data_address,
     volume_group      => 'cinder-volumes',
   }
 }
